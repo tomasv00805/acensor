@@ -1,0 +1,16 @@
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches: [main]
+
+jobs:
+  Jest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: algo
+        run: npm install
+      - name: test del aCensor(perdon)
+        run: npm test testAsensor.test.ts
